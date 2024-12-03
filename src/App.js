@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './sass/App.scss';
+import { useState } from "react";
+import Controls from "./components/Controls";
+import Scene from "./components/Scene";
 
 function App() {
+  const [color, setColor] = useState("white");
+  const [light, setLight] = useState(true);
+
+
+  const updateColor = (color) => {
+    setColor(color === "white" ? "red" : "white");
+  }
+
+  const updateLight = () => {
+    setLight(!light );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Controls
+        light={light}
+        updateColor={updateColor}
+        updateLight={updateLight}
+      />
+      <Scene
+        color={color}
+        light={light}
+      />
     </div>
   );
 }

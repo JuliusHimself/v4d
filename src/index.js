@@ -1,13 +1,21 @@
+// import {
+//   ChakraProvider,
+//   defaultSystem
+// } from "@chakra-ui/react";
+import { Provider } from "@/components/ui/provider"
+import { defaultSystem } from "@chakra-ui/react"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider value={defaultSystem}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

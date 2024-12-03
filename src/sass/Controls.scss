@@ -1,0 +1,33 @@
+@use "colors";
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: colors.$black;
+  color: colors.$white;
+  padding: 8px;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+.controls-container {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+  align-items: center;
+
+  .control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+  }
+}
