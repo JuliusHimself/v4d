@@ -8,14 +8,23 @@ import paper from "../textures/paper.jpg";
 
 
 function Pyramid(props) {
-  const texture = useLoader(TextureLoader, paper);
+  let texturePath = paper
+  if (props.meshTexture === "brick") texturePath = brick
+  if (props.meshTexture === "linen") texturePath = linen
+  const texture = useLoader(TextureLoader, texturePath);
 
   return (
     <mesh {...props}>
       {/* width, height, sides */}
-      <coneGeometry args={[1, 1, 4]} />
-      <meshPhysicalMaterial map={texture} color={"white"} />
+      <coneGeometry args={[props.pyWidth, props.pyHeight, 4]} />
+      {props.meshType === 'texture' && (
+        <meshPhysicalMaterial map={texture} color={"white"} />
+      )}
+      {props.meshType === 'color' && (
+        <meshPhysicalMaterial color={props.meshColor} />
+      )}
     </mesh>
   );
 }
+
 export default Pyramid;

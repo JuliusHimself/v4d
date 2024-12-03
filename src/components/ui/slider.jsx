@@ -1,3 +1,6 @@
+import { Slider as ChakraSlider, For, HStack } from '@chakra-ui/react'
+import * as React from 'react'
+
 function _nullishCoalesce(lhs, rhsFn) {
   if (lhs != null) {
     return lhs
@@ -20,14 +23,14 @@ function _optionalChain(ops) {
       lastAccessLHS = value
       value = fn(value)
     } else if (op === 'call' || op === 'optionalCall') {
+      // eslint-disable-next-line
       value = fn((...args) => value.call(lastAccessLHS, ...args))
       lastAccessLHS = undefined
     }
   }
   return value
 }
-import { Slider as ChakraSlider, For, HStack } from '@chakra-ui/react'
-import * as React from 'react'
+
 
 export const Slider = React.forwardRef(function Slider(props, ref) {
   const { marks: marksProp, label, showValue, ...rest } = props

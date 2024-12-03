@@ -8,17 +8,24 @@ function Scene(props) {
   return (
     <div className="scene">
       <Canvas
-        shadows
         className='canvas'
         camera={{position: [0, 2, 2]}}
       >
         <OrbitControls />
-        <ambientLight color={"white"} intensity={0.3}/>
+        <ambientLight color={"white"} intensity={props.lightIntensity}/>
         {props.light &&
-          <Light position={[0, 3, 0]} />
+          <Light position={[3, 3, 0]} />
         }
         <Suspense fallback={null}>
-          <Pyramid rotateX={3} rotateY={0.2}/>
+          <Pyramid
+            rotateX={3}
+            rotateY={0.2}
+            pyWidth={props.pyWidth}
+            pyHeight={props.pyHeight}
+            meshType={props.meshType}
+            meshColor={props.meshColor}
+            meshTexture={props.meshTexture}
+          />
         </Suspense>
       </Canvas>
     </div>
