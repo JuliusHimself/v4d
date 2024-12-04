@@ -16,7 +16,7 @@ function Pyramid(props) {
   return (
     <mesh {...props}>
       {/* width, height, sides */}
-      <coneGeometry args={[props.pyWidth, props.pyHeight, 4]} />
+      <coneGeometry args={[props.pyWidth, props.pyHeight, 3]} />
       {props.meshType === 'texture' && (
         <meshPhysicalMaterial map={texture} color={"white"} />
       )}
