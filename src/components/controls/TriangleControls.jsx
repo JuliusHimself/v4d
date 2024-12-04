@@ -37,8 +37,8 @@ function TriangleControls(props) {
       <Field label="Mesh Type" mb={`12px`} />
       <RadioGroup value={props.meshType} onValueChange={(e) => props.updateMeshType(e.value)}>
         <HStack gap="6">
-          <Radio value="texture">Texture</Radio>
-          <Radio value="color">Color</Radio>
+          <Radio value="texture" colorPalette="teal">Texture</Radio>
+          <Radio value="color" colorPalette="teal">Color</Radio>
         </HStack>
       </RadioGroup>
 
@@ -58,9 +58,9 @@ function TriangleControls(props) {
           <Field label="Mesh Texture" mb={`12px`} mt={`12px`} />
           <RadioGroup value={props.meshTexture} onValueChange={(e) => props.updateMeshTexture(e.value)}>
             <HStack gap="6">
-              <Radio value="paper">Paper</Radio>
-              <Radio value="linen">Linen</Radio>
-              <Radio value="brick">Brick</Radio>
+              <Radio value="paper" colorPalette="teal">Paper</Radio>
+              <Radio value="linen" colorPalette="teal">Linen</Radio>
+              <Radio value="brick" colorPalette="teal">Brick</Radio>
             </HStack>
           </RadioGroup>
         </div>
