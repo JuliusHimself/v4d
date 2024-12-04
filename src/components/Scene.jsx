@@ -8,6 +8,7 @@ function Scene(props) {
   return (
     <div className="scene">
       <Canvas
+        shadows
         className='canvas'
         camera={{position: [0, 2, 2]}}
       >
